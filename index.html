@@ -4,15 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Fonts from https://fonts.google.com/ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Our own stylesheet(s) -->
     <link rel="stylesheet" href="/index.css" />
 
     <title>End Result</title>
   </head>
 
   <body>
-    <!-- Basic of a webpage, for semantic reasons -->
     <header class="navbar">
-      <h1>header</h1>
+      <a href="/">
+        <svg
+          stroke="purple"
+          fill="purple"
+          stroke-width="0"
+          viewBox="0 0 16 16"
+          width="2.5rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="8" cy="8" r="8" fill="orange" />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M1 7.19l6.64 6.64h.72L15 7.19v-.72l-3.32-3.32-.36-.15H4.68l-.36.15L1 6.47v.72zm7 5.56L2.08 6.83 4.89 4h6.22l2.81 2.83L8 12.75zm0-7.73h2.69l1.81 1.81-4.5 4.4V5.02z"
+          ></path>
+        </svg>
+      </a>
 
       <!-- Navigation -->
       <nav class="main-navigation">
@@ -21,7 +45,8 @@
             GitHub Pages puts all the repositories under
             https://<ProfileName>.github.io/<Repository Name>/
             This requires two different sets of links, one for local development
-            another for when it's deployed.
+            another for when it's deployed. Just using a setup for
+            local development at the moment.
            -->
           <li><a href="#hero">Home</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -33,11 +58,57 @@
 
     <main>
       <section id="hero">
-        <h1>Hero</h1>
+        <header class="glass">
+          <div>
+            <h1>Deep sea romance</h1>
+            <h2>-Where clear signaling is vital</h2>
+          </div>
+        </header>
       </section>
 
       <section id="projects">
-        <h1>Projects</h1>
+        <video
+          autoplay
+          muted
+          loop
+          controls
+          src="/assets/project-background.mp4"
+        ></video>
+
+        <div class="glass project-list">
+          <header>
+            <h1>A taste of what is to come</h1>
+          </header>
+
+          <ul>
+            <!-- A single project card -->
+            <li>
+              <a href="/projects/test/">
+                <article class="project-card">
+                  <header>
+                    <h2>Test Project</h2>
+                  </header>
+
+                  <img
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
+                    alt="Showcase the projects inter communications capabilities"
+                  />
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nulla molestias sunt itaque, accusantium suscipit mollitia
+                    minus perferendis quasi laudantium eaque?
+                  </p>
+
+                  <footer>
+                    <h6>Created by: LarsG</h6>
+                    <h6>Made in: The year of the lord 3000</h6>
+                  </footer>
+                </article>
+              </a>
+            </li>
+            <!-- End of card -->
+          </ul>
+        </div>
       </section>
 
       <section id="hobbies">

@@ -1,11 +1,12 @@
 /* 
   === Content ===
   #1. CSS Reset
-  #2. Main Document
-  #3. Navbar
-  #4. Main Section
-  #5. Footer
-  #6. Reusable Classes
+  #2. Typography
+  #3. Main Document
+  #4. Navbar
+  #5. Main Section
+  #6. Footer
+  #7. Reusable Classes
   ===============
 */
 
@@ -50,22 +51,27 @@ a {
 }
 
 /*
+=======================
+=== #2 - Typography ===
+=======================
+*/
+
+:root {
+  font-family: "Cabin", sans-serif;
+}
+
+/*
 ==========================
 === #2 - Main document ===
 ==========================
 */
 
 body {
-  /* 
-   * Setting the position to relative,
-   * simplyfies creating a fixed Navbar
+  /*
+  Setting the position to relative,
+  simplyfies creating a fixed Navbar
   */
   position: relative;
-}
-
-body > * {
-  /* Adding a litt horizontal padding to each child element */
-  padding: 0px 1rem;
 }
 
 /*
@@ -78,18 +84,16 @@ body > * {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 2rem;
 
   background-color: darkcyan;
 
-  /*
-   * We have to jump through a couple of
-   * hoops to make the Navbar be fixed
-   * to the top of the veiwport
-  */
-  position: fixed;
-  top: 0px;
-  width: 100%;
   height: 5vh;
+
+  /* Making the Navbar stick to the top */
+  position: sticky;
+  top: 0px;
+  z-index: 10;
 }
 
 .main-navigation {
@@ -103,26 +107,94 @@ body > * {
 }
 
 /*
-=========================
-=== #5 - Main Section ===
-=========================
+==========================
+=== #5 - Main Sections ===
+==========================
 */
 
 main > * {
-  margin-top: 1rem;
   border-bottom: solid 1px black;
   min-height: 100vh;
 }
 
-/* This is part of fixed Navbar */
-main > * {
-  padding-top: 5vh;
+/* Hero Section */
+#hero {
+  background-image: url(/assets/hero.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+
+  color: azure;
+  text-transform: uppercase;
+}
+
+#hero header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem 0px;
+  width: 100%;
+}
+
+#hero h1 {
+  font-size: 5rem;
+}
+#hero h2 {
+  text-indent: 4rem;
+  font-style: italic;
+}
+
+/* Projects Section */
+#projects {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects > video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .project-list {
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.project-list > ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+.project-card {
+  background-color: rgba(60, 26, 92, 0.8);
+  color: white;
+
+  padding: 1rem;
+  border-radius: 10px;
+
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.61);
+
+  font-weight: 100;
+}
+.project-card:hover {
+  translate: 0px -0.1rem 150px;
+}
+
+.project-card > img {
+  border-radius: 5px;
 }
 
 /*
@@ -137,8 +209,22 @@ main > * {
 =============================
 */
 
-.project-card {
-  background-color: bisque;
-  padding: 1rem;
-  border-radius: 10px;
+.glass {
+  background-color: rgba(51, 49, 61, 0.521);
+  backdrop-filter: blur(10px);
+}
+
+/*
+The :target pseudo selector allows
+you to style elements based on the
+fragment section of the URL
+https://developer.mozilla.org/en-US/docs/Web/CSS/:target
+
+Here we are adding some padding and subtracting that
+with the negative margin, just for offsetting where
+our anchor elements puts us.
+*/
+:target {
+  padding-top: 5vh;
+  margin-top: -5vh;
 }
