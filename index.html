@@ -11,32 +11,42 @@
 
   <body>
     <!-- Basic of a webpage, for semantic reasons -->
-    <header>
+    <header class="navbar">
       <h1>header</h1>
 
       <!-- Navigation -->
-      <nav>
+      <nav class="main-navigation">
         <ul>
           <!-- 
             GitHub Pages puts all the repositories under
             https://<ProfileName>.github.io/<Repository Name>/
+            This requires two different sets of links, one for local development
+            another for when it's deployed.
            -->
-          <li><a href="/kodeloftet-portfolio-sample/">Home</a></li>
-          <li>
-            <a href="/kodeloftet-portfolio-sample/projects/test/test.html"
-              >Example Project</a
-            >
-          </li>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#footer">Foot</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <h1>main</h1>
+      <section id="hero">
+        <h1>Hero</h1>
+      </section>
+
+      <section id="projects">
+        <h1>Projects</h1>
+      </section>
+
+      <section id="hobbies">
+        <h1>Hobbies</h1>
+      </section>
     </main>
 
-    <footer>
-      <h1>Footer</h1>
+    <footer id="footer">
+      <h1>footer</h1>
 
       <ul>
         <li><a href="">LinkedIn</a></li>

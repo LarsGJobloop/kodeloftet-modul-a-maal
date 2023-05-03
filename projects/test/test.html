@@ -11,20 +11,58 @@
 
   <body>
     <!-- Basic of a webpage, for semantic reasons -->
-    <header>
+    <header class="navbar">
       <h1>header</h1>
 
       <!-- Navigation -->
-      <nav>
+      <nav class="main-navigation">
         <ul>
+          <!-- 
+            GitHub Pages puts all the repositories under
+            https://<ProfileName>.github.io/<Repository Name>/
+            This requires two different sets of links, one for local development
+            another for when it's deployed.
+           -->
           <li><a href="/">Home</a></li>
-          <li><a href="/projects/test/test.html">Example Project</a></li>
+          <li>
+            <a href="/projects/test/test.html">Projects</a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <h1>Example Project</h1>
+      <section id="hero"></section>
+
+      <section id="projects">
+        <ul class="project-list">
+          <!--
+          This is a semantically sensible
+          structure for a "card" displaying some
+          information about a project you have created
+         -->
+          <li class="project-card">
+            <a href="">
+              <article>
+                <header>
+                  <h2>Sub Genre Creator</h2>
+                  <h3>-A distressing tale</h3>
+                </header>
+
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Facere consectetur iure soluta placeat quo quasi eligendi
+                  nesciunt quidem ad. Consequatur adipisci ex eius impedit,
+                  reiciendis voluptatem dignissimos, cum necessitatibus vitae,
+                  molestiae voluptatibus tenetur distinctio cupiditate pariatur?
+                  Minus inventore ratione mollitia.
+                </p>
+              </article>
+            </a>
+          </li>
+          <!-- End of first Project Card -->
+        </ul>
+      </section>
     </main>
   </body>
 </html>

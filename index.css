@@ -1,4 +1,34 @@
-/* Normalize CSS */
+/* 
+  === Content ===
+  #1. CSS Reset
+  #2. Main Document
+  #3. Navbar
+  #4. Main Section
+  #5. Footer
+  #6. Reusable Classes
+  ===============
+*/
+
+/*
+=========================================
+=== #1 - CSS Reset/Noramlize/Override ===
+=========================================
+HTML elements comes with a default
+set of styling. Some which made sense
+in ye olden day of the internet, but
+is not that sensible for modern websites.
+This section here just overrides some 
+of the more annoying ones.
+
+We set them up first thing so it does
+not override anything else.
+
+Mind these are opinionated, there really is
+no right or wrong here. And you could achieve
+the same look of your page be styling each
+element individually. This is mearly handy ;)
+*/
+
 * {
   margin: 0px;
   padding: 0px;
@@ -10,4 +40,105 @@ img {
   max-width: 100%;
 }
 
-/* Main document */
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+==========================
+=== #2 - Main document ===
+==========================
+*/
+
+body {
+  /* 
+   * Setting the position to relative,
+   * simplyfies creating a fixed Navbar
+  */
+  position: relative;
+}
+
+body > * {
+  /* Adding a litt horizontal padding to each child element */
+  padding: 0px 1rem;
+}
+
+/*
+===================
+=== #4 - Navbar ===
+===================
+*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: darkcyan;
+
+  /*
+   * We have to jump through a couple of
+   * hoops to make the Navbar be fixed
+   * to the top of the veiwport
+  */
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 5vh;
+}
+
+.main-navigation {
+}
+
+.main-navigation > ul {
+  display: flex;
+  gap: 1rem;
+
+  font-weight: 900;
+}
+
+/*
+=========================
+=== #5 - Main Section ===
+=========================
+*/
+
+main > * {
+  margin-top: 1rem;
+  border-bottom: solid 1px black;
+  min-height: 100vh;
+}
+
+/* This is part of fixed Navbar */
+main > * {
+  padding-top: 5vh;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/*
+===================
+=== #6 - Footer ===
+===================
+*/
+
+/*
+=============================
+=== #7 - Reusable Classes ===
+=============================
+*/
+
+.project-card {
+  background-color: bisque;
+  padding: 1rem;
+  border-radius: 10px;
+}
